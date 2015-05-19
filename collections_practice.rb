@@ -65,10 +65,27 @@ def kesha_maker(array)
 end
 
 def greater_and_less_than_10(array)
-
+  h = Hash.new
+  h["greater_than_10"] = []
+  h["less_than_10"] = []
+  array.each do |num|
+    if num > 10
+      h["greater_than_10"] << num
+    else
+      h["less_than_10"] << num
+    end
+  end
+  h
 end
 
-def find_winners(array)
+def find_winners(da_hash)
+  da_winners = []
+  da_hash.each {|key, value|
+    if value == "winner"
+      da_winners << key
+    end
+  }
+  da_winners
 end
 
 def find_a(array)
@@ -82,16 +99,37 @@ def find_a(array)
 end
 
 def sum_array(array)
-
+  sum = 0
+  array.each do |num|
+    sum += num
+  end
+  sum
 end
 
 def add_s(array)
+  for index in 0..(array.length-1)
+    if index != 1
+      array[index] << "s"
+    end
+  end
+  array
 end
 
-def count_words(array)
+def count_words(story)
+  histogram = Hash.new(0)
+  story.split(' ').each do |word|
+    histogram[word] += 1
+  end
+  histogram
 end
 
-def organize_songs_by_artist(array)
+def organize_songs_by_artist(input)
+  my_hash = Hash.new {|hash, key| hash[key] = Array.new}
+  input.each do |s_and_a|
+    pair = s_and_a.split(" - ")
+    my_hash[pair[0]] << pair[1]
+  end
+  my_hash
 end
 
 
