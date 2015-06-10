@@ -77,6 +77,20 @@ def add_s(array)
     end
 end
 
+def count_words(story)
+    story_count = Hash.new
+    story.each_line do |line|
+        words = line.split
+            words.each do |word|
+                if story_count.has_key?(word)
+                story_count[word] = story_count[word] + 1
+                else
+                    story_count[word] = 1
+                end
+            end
+    end
+    story_count
+end
 
 
 
