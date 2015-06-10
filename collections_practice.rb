@@ -40,3 +40,13 @@ def greater_and_less_than_10(array)
     end
     sorted_hash
 end
+
+def find_winners(hash)
+    winner_array = [ ]
+    hash.each do |name, value|
+        if value == "winner"
+            winner_array << name
+        end
+    end
+    winner_array
+end
