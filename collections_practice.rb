@@ -50,3 +50,29 @@ def find_winners(hash)
     end
     winner_array
 end
+
+def find_a(array)
+    a_array = [ ]
+    array.each do |string|
+        if string.start_with?('a')
+            a_array << string
+        end
+    end
+    a_array
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
