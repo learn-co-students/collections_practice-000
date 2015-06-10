@@ -92,8 +92,15 @@ def count_words(story)
     story_count
 end
 
-
-
+def organize_songs_by_artist(jams)
+    jams_hash= Hash.new do |artist, song| 
+        artist[song] = Array.new
+    end
+    jams.each do |artist_song_pair|
+        jams_hash[artist_song_pair.split(" - ")[0]] << artist_song_pair.split(" - ")[1]
+    end
+    jams_hash
+end
 
 
 
