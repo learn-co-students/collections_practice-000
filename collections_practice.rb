@@ -98,58 +98,6 @@ def count_words(story)
 end
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def organize_songs_by_artist(array)
-
-# 	hash = Hash.new do |artist, song|
-# 		artist[song] = Array.new
-# 	end
-# 	array.each do |x|
-# 		hash[x.split(" - ")[0]] << 
-# 	end
-# 	hash
-# end
-
 def organize_songs_by_artist(song_database)
 	organize_songs= {}
 
