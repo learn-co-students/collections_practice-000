@@ -29,6 +29,23 @@ describe 'collections practice' do
     end
   end
 
+  # Bonus
+  describe '#swap_elements_from_to' do
+    it 'moves the element from "index" position to "dest_index"' do
+      expect(swap_elements_from_to(["blake", "ashley", "scott"], 0, 2)).to eq(["ashley", "scott", "blake"])
+      expect(swap_elements_from_to(["blake", "ashley", "scott"], 2, 0)).to eq(["scott", "blake", "ashley"])
+    end	
+	
+	it 'returns nil if something goes wrong' do
+	  expect(swap_elements_from_to(["blake", "ashley", "scott"], 3, 1)).to eq(nil) 
+	  expect(swap_elements_from_to(["blake", "ashley", "scott"], 0, 5)).to eq(nil)
+	end
+	
+	it 'works right if index equals dest_index' do
+      expect(swap_elements_from_to(["blake", "ashley", "scott"], 1, 1)).to eq(["blake", "ashley", "scott"])
+	end
+  end
+  
   # Question 4
   describe '#reverse_array' do
     it 'reverse the order of an array' do
