@@ -15,10 +15,18 @@ def sort_array_char_count(string_array)
 end
 
 def swap_elements(array)
-  second_element = array[1]
-  third_element = array[2]
-  array[1] = third_element
-  array[2] = second_element
+  swap = array[1]
+  array[1] = array[2]
+  array[2] = swap
+
+  array
+end
+
+def swap_elements_from_to(array, index, destination_index)
+  swap = array[index]
+  array[index] = array[destination_index]
+  array[destination_index] = swap
+
   array
 end
 
@@ -29,30 +37,28 @@ end
 def kesha_maker(array)
   return_array = []
   array.each do |word|
-    word_as_array = word.split("")
-    word_as_array[2] = "$"
-    word = word_as_array.join
+    word[2] = "$"
     return_array << word
   end
   return_array
 end
 
 def find_a(array)
-  array.select do |x|
-    x.start_with?("a")
-  end
+  array.select {|word| word.start_with?("a")}
 end
 
 def sum_array(array)
-  array.inject {|sum, n| sum + n }
+  array.inject {|sum, n| sum + n}
 end
 
 def add_s(array)
-  array.each_with_index do |word, index|
+  array.each_with_index.collect {|word, index|
     if index != 1 
       word << "s"
+    else 
+      word 
     end
-  end
+  }
 end
 
 
